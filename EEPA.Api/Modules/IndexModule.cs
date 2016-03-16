@@ -17,15 +17,9 @@ namespace EEPA.Api.Modules
             _messageService = messageService;
 
             Get["/"] = Index;
-            Post["/message/{message}"] = SendMessage;
         }
 
-        private dynamic SendMessage(dynamic o)
-        {
-            string message = o.message;
-            var response = _messageService.Send(message);
-            return response;
-        }
+        
 
         private dynamic Index(dynamic o)
         {
