@@ -1,4 +1,5 @@
-﻿using EEPA.Api.Bootstrapper;
+﻿using System;
+using EEPA.Api.Bootstrapper;
 using Nancy;
 
 namespace EEPA.Api.Modules

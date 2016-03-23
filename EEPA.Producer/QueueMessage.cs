@@ -11,9 +11,4 @@ namespace EEPA.Producer
         public string Type { get; set; }
         public string MessageBody { get; set; }
     }
-
-    public class User
-    {
-        public string UserName { get; set; }
-    }
 }

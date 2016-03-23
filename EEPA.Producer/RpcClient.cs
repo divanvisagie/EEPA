@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -24,7 +25,7 @@ namespace EEPA.Producer
                 consumer: consumer);
         }
 
-        public string Call(string message)
+        public string Call(string message, string queueName = "rpc_queue")
         {
             var corrId = Guid.NewGuid().ToString();
             var props = channel.CreateBasicProperties();
@@ -33,7 +34,7 @@ namespace EEPA.Producer
 
             var messageBytes = Encoding.UTF8.GetBytes(message);
             channel.BasicPublish(exchange: "",
-                routingKey: "rpc_queue",
+                routingKey: queueName,
                 basicProperties: props,
                 body: messageBytes);
 
@@ -50,6 +51,18 @@ namespace EEPA.Producer
         public void Close()
         {
             connection.Close();
+        }
+
+        public string Call(IDomainMessage message)
+        {
+            var messageBody = JsonConvert.SerializeObject(message);
+            return Call(messageBody, message.GetType().Name);
+        }
+
+        public string Call<T>(IDomainMessage message)
+        {
+            var messageBody = JsonConvert.SerializeObject(message);
+            return Call(messageBody,typeof(T).Name);
         }
     }
 }

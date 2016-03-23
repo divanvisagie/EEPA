@@ -78,8 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper\CoreBootstrapper.cs" />
+    <Compile Include="Bootstrapper\IMessageService.cs" />
+    <Compile Include="Bootstrapper\MessageService.cs" />
     <Compile Include="Modules\FibonacciModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
+    <Compile Include="Modules\UserModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

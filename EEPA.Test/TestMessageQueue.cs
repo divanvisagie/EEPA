@@ -6,6 +6,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Drawing;
+using EEPA.Producer;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 
 namespace EEPA.Test
