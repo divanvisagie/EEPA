@@ -11,7 +11,7 @@ Extensible Enterprise Plugin Architecture
 
 Client: 
 ```cs
-new Client().Call<IDomainMessage, IDomauinMessage>(fibonacci);
+new Client().Call<IDomainMessage, IDomainMessage>(fibonacci);
 ```
 
 
