@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using EEPA.Producer;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -56,19 +57,16 @@ namespace EEPA.Library.Client
 
         public string Call(IDomainMessage message)
         {
-            var messageBody = JsonConvert.SerializeObject(message);
+            var messageBody = JsonConvert.SerializeObject(message,SettingsManager.JsonFormatting,SettingsManager.JsonSettings);
             return Call(messageBody, message.GetType().Name);
         }
 
 
-        //public TR Execute<T, TR>(IDomainMessage<T> message)
-        //{
         public TR Call<T, TR>(IDomainMessage message)
         {
-            var messageBody = JsonConvert.SerializeObject(message);
+            var messageBody = JsonConvert.SerializeObject(message,SettingsManager.JsonFormatting,SettingsManager.JsonSettings);
             var answer =  Call(messageBody,typeof(T).Name.ToLower());
-
-            return JsonConvert.DeserializeObject<TR>(answer);
+            return JsonConvert.DeserializeObject<TR>(answer,SettingsManager.JsonSettings);
         }
     }
 }

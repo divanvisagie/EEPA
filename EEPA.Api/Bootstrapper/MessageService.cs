@@ -1,24 +1,25 @@
-﻿using EEPA.Producer;
+﻿using EEPA.Library.Client;
+using EEPA.Producer;
 
 namespace EEPA.Api.Bootstrapper
 {
     public class MessageService : IMessageService
     {
-        private RpcClient _rpcClient;
+        private readonly Client _client;
 
         public MessageService()
         {
-            _rpcClient = new RpcClient();
+            _client = new Client();
         }
 
         public string Send(string message)
         {
-            return _rpcClient.Call(message);
+            return _client.Call(message);
         }
 
         public TR Send<T,TR>(IDomainMessage<T> domainMessage)
         {
-            var messageResponse = _rpcClient.Call<T,TR>(domainMessage);
+            var messageResponse = _client.Call<T,TR>(domainMessage);
             return messageResponse;
         }
     }

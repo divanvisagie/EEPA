@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-
+﻿
 namespace EEPA.Producer
 {
     public class User : IDomainMessage<User>

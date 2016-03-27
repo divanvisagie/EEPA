@@ -14,9 +14,9 @@ namespace EEPA.Library.Consumer
 
         public string HandleMessage(string message)
         {
-            var inMessage = JsonConvert.DeserializeObject<T>(message);
+            var inMessage = JsonConvert.DeserializeObject<T>(message,SettingsManager.JsonSettings);
             var msg = _handler(inMessage);
-            return JsonConvert.SerializeObject(msg);
+            return JsonConvert.SerializeObject(msg,SettingsManager.JsonFormatting,SettingsManager.JsonSettings);
         }
     }
       

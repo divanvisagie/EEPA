@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,6 +87,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EEPA.Library\EEPA.Library.csproj">
+      <Project>{7BD2F76A-9DA8-4C64-87FA-D46C44A1D162}</Project>
+      <Name>EEPA.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EEPA.Producer\EEPA.Producer.csproj">
       <Project>{c3e907ad-bab9-40f9-8ef0-a5a1578a92bf}</Project>
       <Name>EEPA.Producer</Name>
