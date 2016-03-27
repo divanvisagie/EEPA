@@ -1,4 +1,6 @@
-﻿using EEPA.Producer;
+﻿using System.Runtime.CompilerServices;
+using EEPA.Producer;
+using EEPA.Library.Client;
 
 namespace EEPA.Test
 {
@@ -9,12 +11,14 @@ namespace EEPA.Test
     {
      
         [Test]
-        public void SendRpcMessage_GivenHello_ShouldReturnHelloWorld()
+        public void CallingFib30_ShouldReturn_832040()
         {
             var rpcClient = new RpcClient();
 
             var fibonacci = new Fibonacci(30);
             var fibAnswer = rpcClient.Call<Fibonacci,MathAnswer>(fibonacci);
+
+            new Client().Call<Fibonacci, MathAnswer>(fibonacci);
 
             rpcClient.Close();
 
