@@ -17,5 +17,8 @@ new Client().Call<IDomainMessage, IDomainMessage>(fibonacci);
 
 Consumer:
 ```cs
-new Listener().Listen<Fibonacci>("queuename", inMessage => new AnswerMessage());
+new Listener().Listen<IDomainMessage>>("queuename", inMessage => { 
+	...
+	return new IDomainMessage>()
+});
 ```
