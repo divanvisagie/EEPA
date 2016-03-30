@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEPA.Api", "EEPA.Api\EEPA.Api.csproj", "{FE199F18-1DAE-44FC-BB5F-EB3DE4DCB299}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEPA.Test", "EEPA.Test\EEPA.Test.csproj", "{599C0166-99F0-4FEC-8FA4-6DCCA7251C40}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEPA.Producer", "EEPA.Producer\EEPA.Producer.csproj", "{C3E907AD-BAB9-40F9-8EF0-A5A1578A92BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEPA.Consumer", "EEPA.Consumer\EEPA.Consumer.csproj", "{CE578569-23B5-4A04-9176-D1457ED2D312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEPA.Domain", "EEPA.Domain\EEPA.Domain.csproj", "{3946917E-1F2C-4D75-BE0F-0C246F0102C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +33,10 @@ Global
 		{CE578569-23B5-4A04-9176-D1457ED2D312}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE578569-23B5-4A04-9176-D1457ED2D312}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE578569-23B5-4A04-9176-D1457ED2D312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3946917E-1F2C-4D75-BE0F-0C246F0102C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3946917E-1F2C-4D75-BE0F-0C246F0102C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3946917E-1F2C-4D75-BE0F-0C246F0102C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3946917E-1F2C-4D75-BE0F-0C246F0102C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
